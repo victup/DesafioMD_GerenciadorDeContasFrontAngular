@@ -1,0 +1,21 @@
+
+
+<h1>Contas</h1>
+
+<button type="button" class="btn btn-primary mb-5" (click)="obterTodasAsContas()">Detalhar Contas</button>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let conta of contas">
+      <div class="card text-white bg-primary ml-5 col-12" style="max-width: 18rem;">
+        <div class="card-header">Detalhes da Conta</div>
+        <div class="card-body">
+          <h5 class="card-title">{{conta.nome}}</h5>
+          <p class="card-text">Valor Original: {{conta.valorOriginal}}</p>
+          <p class="card-text">Valor Corrigido: {{conta.valorCorrigido}}</p>
+          <p class="card-text">Dias Atrasados: {{conta.atraso}}</p>
+          <p class="card-text">Data pagamento: {{conta.dataPagamento}}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
