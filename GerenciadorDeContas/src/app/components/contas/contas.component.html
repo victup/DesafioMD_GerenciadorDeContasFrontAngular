@@ -1,21 +1,46 @@
 
 
-<h1>Contas</h1>
-
-<button type="button" class="btn btn-primary mb-5" (click)="obterTodasAsContas()">Detalhar Contas</button>
-
 <div class="container">
+
+  <h1>Contas</h1>
+
+  <h3>Crie uma Nova Conta</h3>
+
+  <form action="">
+
+    <div class="input-group">
+      <input class="form-control mb-1" name="nome" type="text" [(ngModel)]="conta.nome" placeholder="Nome"/>
+    </div>
+    <div class="input-group">
+      <input class="form-control mb-1" name="valor" type="number" [(ngModel)]="conta.valorOriginal"
+        placeholder="Valor: R$ 3223.52" />
+    </div>
+    <div class="input-group">
+      <input class="form-control mb-1" name="vencimento" [(ngModel)]="conta.dataVencimento" type="date" />
+    </div>
+    <div class="input-group">
+      <input class="form-control mb-1" name="pagamento" [(ngModel)]="conta.dataPagamento" type="date" />
+    </div>
+
+    <button type="button" class="btn btn-success mb-5 mt-2" (click)="cadastrarNovaConta()">Cadastrar Conta</button>
+  </form>
+
+
+
   <div class="row">
     <ng-container *ngFor="let conta of contas">
-      <div class="card text-white bg-primary ml-5 col-12" style="max-width: 18rem;">
+      <div class="card text-white bg-primary mb-3 ml-5 col-12" style="max-width: 18rem;">
         <div class="card-header">Detalhes da Conta</div>
         <div class="card-body">
           <h5 class="card-title">{{conta.nome}}</h5>
           <p class="card-text">Valor Original: {{conta.valorOriginal}}</p>
           <p class="card-text">Valor Corrigido: {{conta.valorCorrigido}}</p>
           <p class="card-text">Dias Atrasados: {{conta.atraso}}</p>
-          <p class="card-text">Data pagamento: {{conta.dataPagamento}}</p>
+          <p class="card-text">Data pagamento: {{conta.dataPagamento | date: 'dd/MM/yyyy'}}</p>
         </div>
       </div>
     </ng-container>
+
   </div>
+
+

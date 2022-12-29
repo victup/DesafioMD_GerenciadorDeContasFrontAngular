@@ -5,6 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContasComponent } from './components/contas/contas.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 
 
@@ -16,7 +19,8 @@ import { ContasComponent } from './components/contas/contas.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
